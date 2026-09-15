@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First-Time Home Buyer in the South Bay | Jessica &amp; Megan</title>
+  <meta name="description" content="South Bay buyer's agents specializing in first-time homebuyers. Explore neighborhoods, estimate your mortgage payment, and get step-by-step guidance from agents who know every street.">
+  <link rel="canonical" href="https://jessandmegan.com/buyers/">
+  <meta property="og:title" content="First-Time Home Buyer in the South Bay | Jessica &amp; Megan">
+  <meta property="og:description" content="South Bay buyer's agents specializing in first-time homebuyers.">
+  <meta property="og:image" content="https://jessandmegan.com/assets/og-default.jpg">
+  <meta property="og:url" content="https://jessandmegan.com/buyers/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What's the difference between pre-qualification and pre-approval?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Pre-qualification is a quick, informal estimate of how much you might be able to borrow based on self-reported income and assets — no credit check required. Pre-approval is a formal process where a lender verifies your income, assets, and credit. Sellers in the South Bay market take pre-approval letters seriously; many will not accept an offer without one." }
+          },
+          {
+            "@type": "Question",
+            "name": "How much do I need for a down payment?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Conventional loans typically require 5–20% down. A 20% down payment avoids private mortgage insurance (PMI), which adds cost to your monthly payment. On a $1.2M home, 20% is $240,000. Some loan programs allow 3–5% down for first-time buyers, though you'll pay PMI until you reach 20% equity." }
+          },
+          {
+            "@type": "Question",
+            "name": "What are closing costs and how much should I expect?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Closing costs typically run 2–3% of the loan amount and cover fees for escrow, title insurance, lender origination, appraisal, and recording. On a $1.2M purchase with 20% down, expect roughly $20,000–$30,000 in closing costs on top of your down payment." }
+          },
+          {
+            "@type": "Question",
+            "name": "How competitive is the South Bay market right now?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The South Bay remains a competitive seller's market in most price ranges and neighborhoods. Well-priced homes in top school districts regularly receive multiple offers. Working with agents who know the market — and having your financing fully in order before you start touring — is the single most important step you can take." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does a buyer's agent do for me — and what does it cost?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Your buyer's agent represents your interests exclusively: finding homes that match your criteria, advising on offer strategy, negotiating on your behalf, and guiding you through inspections and closing. Under current California rules, buyers must sign a Buyer Representation Agreement (BRA) before touring homes. Compensation is negotiated as part of the transaction — we'll walk you through how this works when we connect." }
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Buyer Representation",
+        "provider": { "@id": "https://jessandmegan.com/#business" },
+        "areaServed": "South Bay, Silicon Valley, CA",
+        "serviceType": "Real Estate Buyer Representation"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jessandmegan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Buyers", "item": "https://jessandmegan.com/buyers/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    :root {
+      --cb-navy: #002B5C;
+      --cb-blue: #1E5AB8;
+      --cb-gold: #C9A84C;
+      --cb-light-bg: #F0F5FB;
+      --cb-border: #D8E4F0;
+      --cb-body: #2D4A6A;
+    }
+
+    /* Hero */
+    .buyers-hero { background: var(--cb-navy); color: #fff; padding: 4rem 1rem 3.5rem; text-align: center; }
+    .buyers-hero .eyebrow { font-size: 0.7rem; letter-spacing: 2px; color: var(--cb-gold); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .buyers-hero h1 { font-family: Georgia, serif; font-size: clamp(1.75rem, 5vw, 2.75rem); margin: 0 0 0.75rem; }
+    .buyers-hero .subhead { font-size: 1rem; opacity: 0.8; margin: 0 auto 1.75rem; max-width: 520px; }
+    .btn-gold { display: inline-block; background: var(--cb-gold); color: var(--cb-navy); font-weight: 700; padding: 0.75rem 1.75rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem; }
+    .btn-gold:hover { filter: brightness(1.08); }
+
+    /* Neighborhood selector */
+    .neighborhood-selector { background: var(--cb-light-bg); padding: 3rem 1rem; }
+    .neighborhood-selector__inner { max-width: 760px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.7rem; letter-spacing: 2px; color: var(--cb-gold); text-transform: uppercase; margin-bottom: 0.4rem; }
+    .section-title { font-family: Georgia, serif; font-size: 1.5rem; color: var(--cb-navy); margin: 0 0 0.35rem; }
+    .section-sub { font-size: 0.875rem; color: var(--cb-body); margin: 0 0 1.25rem; }
+    .nb-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+    @media (max-width: 540px) { .nb-tiles { grid-template-columns: repeat(2, 1fr); } }
+    .nb-tile { background: var(--cb-navy); color: #fff; padding: 1.1rem 0.5rem; border-radius: 4px; font-size: 0.8rem; text-align: center; cursor: pointer; border: 3px solid transparent; transition: border-color 0.15s; }
+    .nb-tile:nth-child(even) { background: var(--cb-blue); }
+    .nb-tile.active { border-color: var(--cb-gold); }
+    .nb-panel { display: none; background: #fff; border: 2px solid var(--cb-gold); border-radius: 6px; padding: 1.25rem; margin-top: 2px; }
+    .nb-panel.visible { display: block; }
+    .nb-panel__name { font-weight: 700; font-size: 1.05rem; color: var(--cb-navy); }
+    .nb-panel__desc { font-size: 0.85rem; color: var(--cb-body); margin: 0.25rem 0 0.85rem; }
+    .nb-panel__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 0.85rem; }
+    .nb-stat { background: var(--cb-light-bg); padding: 0.75rem; border-radius: 4px; text-align: center; }
+    .nb-stat__value { font-size: 1.1rem; font-weight: 700; color: var(--cb-navy); display: block; }
+    .nb-stat__label { font-size: 0.7rem; color: var(--cb-body); display: block; margin-top: 2px; }
+    .nb-panel__note { font-size: 0.7rem; color: var(--cb-body); opacity: 0.65; margin-bottom: 0.85rem; }
+    .btn-explore { display: inline-block; background: var(--cb-navy); color: #fff; padding: 0.6rem 1.1rem; border-radius: 4px; font-size: 0.825rem; font-weight: 600; text-decoration: none; }
+    .btn-explore:hover { filter: brightness(1.2); }
+
+    /* Buying process */
+    .buying-process { background: #fff; padding: 3rem 1rem; }
+    .buying-process__inner { max-width: 760px; margin: 0 auto; }
+    .steps { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.25rem; }
+    .step { background: var(--cb-light-bg); border: 1px solid var(--cb-border); padding: 0.6rem 1rem; border-radius: 4px; font-size: 0.85rem; }
+
+    /* Why us */
+    .why-us { background: var(--cb-light-bg); padding: 3rem 1rem; }
+    .why-us__inner { max-width: 760px; margin: 0 auto; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 1.25rem; }
+    @media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
+    .why-item { background: #fff; padding: 0.8rem 1rem; border-radius: 4px; font-size: 0.875rem; }
+
+    /* Mortgage calculator */
+    .mortgage-calc { background: #fff; padding: 3rem 1rem; }
+    .mortgage-calc__inner { max-width: 760px; margin: 0 auto; }
+    .calc-inputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 1.25rem 0 1rem; }
+    @media (max-width: 560px) { .calc-inputs { grid-template-columns: 1fr; } }
+    .calc-field label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--cb-body); margin-bottom: 4px; }
+    .calc-field input, .calc-field select { width: 100%; border: 1px solid var(--cb-border); border-radius: 4px; padding: 0.5rem 0.6rem; font-size: 0.9rem; color: var(--cb-navy); }
+    .term-tabs { display: flex; gap: 6px; margin-bottom: 1.25rem; }
+    .term-tab { padding: 0.4rem 0.85rem; border: 2px solid var(--cb-border); border-radius: 4px; font-size: 0.8rem; cursor: pointer; background: #fff; color: var(--cb-body); }
+    .term-tab.active { border-color: var(--cb-navy); background: var(--cb-navy); color: #fff; }
+    .calc-result { background: var(--cb-navy); color: #fff; padding: 0.85rem 1.25rem; border-radius: 4px; display: inline-block; font-size: 1rem; margin-bottom: 0.5rem; }
+    .calc-disclaimer { font-size: 0.75rem; color: var(--cb-body); opacity: 0.7; margin: 0.25rem 0 0; }
+    .calc-arm-note { font-size: 0.75rem; color: var(--cb-body); margin: 0.35rem 0 0; display: none; }
+
+    /* FAQ accordion */
+    .faq { background: var(--cb-light-bg); padding: 3rem 1rem; }
+    .faq__inner { max-width: 760px; margin: 0 auto; }
+    .faq-item { background: #fff; border: 1px solid var(--cb-border); border-radius: 4px; margin-bottom: 8px; overflow: hidden; }
+    .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 1rem 1.1rem; font-size: 0.9rem; font-weight: 600; color: var(--cb-navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-question .arrow { transition: transform 0.2s; font-size: 0.75rem; color: var(--cb-gold); }
+    .faq-question[aria-expanded="true"] .arrow { transform: rotate(180deg); }
+    .faq-answer { display: none; padding: 0 1.1rem 1rem; font-size: 0.875rem; color: var(--cb-body); line-height: 1.6; }
+    .faq-answer.open { display: block; }
+
+    /* Blog feed */
+    .buyer-tips { background: #fff; padding: 3rem 1rem; }
+    .buyer-tips__inner { max-width: 760px; margin: 0 auto; }
+    .post-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.25rem; }
+    @media (max-width: 640px) { .post-cards { grid-template-columns: 1fr; } }
+    .post-card { border: 1px solid var(--cb-border); border-radius: 6px; overflow: hidden; }
+    .post-card__img { width: 100%; height: 140px; object-fit: cover; display: block; background: var(--cb-light-bg); }
+    .post-card__body { padding: 0.75rem; }
+    .post-card__tag { font-size: 0.65rem; letter-spacing: 1.5px; color: var(--cb-blue); text-transform: uppercase; }
+    .post-card__title { font-size: 0.875rem; font-weight: 600; color: var(--cb-navy); margin: 0.3rem 0 0.4rem; }
+    .post-card__excerpt { font-size: 0.8rem; color: var(--cb-body); margin: 0 0 0.5rem; }
+    .post-card__link { font-size: 0.8rem; color: var(--cb-blue); }
+
+    /* Contact */
+    .buyer-contact { background: var(--cb-navy); color: #fff; padding: 4rem 1rem; }
+    .buyer-contact__inner { max-width: 600px; margin: 0 auto; }
+    .buyer-contact h2 { font-family: Georgia, serif; font-size: 1.75rem; margin: 0 0 0.5rem; }
+    .buyer-contact .subhead { opacity: 0.8; margin: 0 0 2rem; }
+    .contact-form { background: #fff; border-radius: 8px; padding: 1.75rem; }
+    .form-field { margin-bottom: 1rem; }
+    .form-field label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--cb-navy); margin-bottom: 4px; }
+    .form-field input, .form-field select { width: 100%; border: 1px solid var(--cb-border); border-radius: 4px; padding: 0.55rem 0.7rem; font-size: 0.9rem; color: var(--cb-navy); box-sizing: border-box; }
+    .form-error { display: none; color: #B91C1C; font-size: 0.8rem; margin-bottom: 0.75rem; }
+    .form-confirmation { display: none; text-align: center; padding: 2rem 0; }
+    .form-confirmation h3 { color: var(--cb-navy); margin-bottom: 0.5rem; }
+    .form-confirmation p { color: var(--cb-body); font-size: 0.875rem; }
+    .btn-submit { width: 100%; background: var(--cb-gold); color: var(--cb-navy); font-weight: 700; padding: 0.85rem; border: none; border-radius: 4px; font-size: 0.95rem; cursor: pointer; }
+    .btn-submit:hover { filter: brightness(1.08); }
+  </style>
+</head>
+<body>
+
+  <nav id="nav" aria-label="Main navigation"></nav>
+
+  <!-- ── SECTION 1: HERO ── -->
+  <section class="buyers-hero">
+    <p class="eyebrow">Coldwell Banker Realty · San Jose, CA</p>
+    <h1>Buying Your First Home in the South Bay</h1>
+    <p class="subhead">Patient guidance, local expertise, your advocate from search to close.</p>
+    <a href="#contact" class="btn-gold">Let's Talk About Buying &rarr;</a>
+  </section>
+
+  <!-- ── SECTION 2: NEIGHBORHOOD SELECTOR ── -->
+  <section class="neighborhood-selector">
+    <div class="neighborhood-selector__inner">
+      <p class="section-eyebrow">Neighborhoods</p>
+      <h2 class="section-title">Where Do You Want to Live?</h2>
+      <p class="section-sub">Click a neighborhood to explore homes, prices, and what makes it unique.</p>
+
+      <div class="nb-tiles" id="nb-tiles"></div>
+
+      <div class="nb-panel" id="nb-panel" aria-live="polite">
+        <div class="nb-panel__name" id="nb-name"></div>
+        <div class="nb-panel__desc" id="nb-desc"></div>
+        <div class="nb-panel__stats">
+          <div class="nb-stat">
+            <span class="nb-stat__value" id="nb-price"></span>
+            <span class="nb-stat__label">Approx. Median Price</span>
+          </div>
+          <div class="nb-stat">
+            <span class="nb-stat__value" id="nb-schools"></span>
+            <span class="nb-stat__label">School District</span>
+          </div>
+        </div>
+        <p class="nb-panel__note">Median price manually maintained &middot; Active listings &amp; price trends coming in Phase 2</p>
+        <a class="btn-explore" id="nb-link" href="#">Explore <span id="nb-link-name"></span> &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: BUYING PROCESS ── -->
+  <section class="buying-process">
+    <div class="buying-process__inner">
+      <p class="section-eyebrow">The Journey</p>
+      <h2 class="section-title">How Buying a Home Works</h2>
+      <div class="steps">
+        <div class="step"><strong>1.</strong> Get pre-approved</div>
+        <div class="step"><strong>2.</strong> Define your search</div>
+        <div class="step"><strong>3.</strong> Tour homes</div>
+        <div class="step"><strong>4.</strong> Make an offer</div>
+        <div class="step"><strong>5.</strong> Inspections &amp; contingencies</div>
+        <div class="step"><strong>6.</strong> Close &amp; get your keys</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: WHY US ── -->
+  <section class="why-us">
+    <div class="why-us__inner">
+      <p class="section-eyebrow">Why Choose Us</p>
+      <h2 class="section-title">Why Buyers Choose Jessica &amp; Megan</h2>
+      <div class="why-grid">
+        <div class="why-item">Deep neighborhood knowledge</div>
+        <div class="why-item">Patient, no-pressure guidance</div>
+        <div class="why-item">Offer strategy &amp; negotiation</div>
+        <div class="why-item">Step-by-step process support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: MORTGAGE CALCULATOR ── -->
+  <section class="mortgage-calc" id="calculator">
+    <div class="mortgage-calc__inner">
+      <p class="section-eyebrow">Estimate Payments</p>
+      <h2 class="section-title">Estimate Your Monthly Payment</h2>
+
+      <div class="term-tabs" role="tablist" aria-label="Loan term">
+        <button class="term-tab active" data-term="30" role="tab" aria-selected="true">30-yr Fixed</button>
+        <button class="term-tab" data-term="15" role="tab" aria-selected="false">15-yr Fixed</button>
+        <button class="term-tab" data-term="5arm" role="tab" aria-selected="false">5/1 ARM</button>
+      </div>
+
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label for="calc-price">Home Price ($)</label>
+          <input type="number" id="calc-price" value="1200000" min="100000" step="10000">
+        </div>
+        <div class="calc-field">
+          <label for="calc-down">Down Payment (%)</label>
+          <input type="number" id="calc-down" value="20" min="3" max="100" step="1">
+        </div>
+        <div class="calc-field">
+          <label for="calc-rate">Interest Rate (%)</label>
+          <input type="number" id="calc-rate" value="6.75" min="1" max="20" step="0.01">
+        </div>
+      </div>
+
+      <div id="calc-result-wrap">
+        <div class="calc-result">
+          Est. Monthly Payment: <strong id="calc-output">$6,232 / mo</strong>
+        </div>
+        <p class="calc-disclaimer">Principal &amp; interest only. Does not include property taxes, homeowner's insurance, or HOA fees.</p>
+        <p class="calc-arm-note" id="calc-arm-note">ARM rate shown is the initial rate only; payments may increase after year 5.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 6: FAQ ── -->
+  <section class="faq">
+    <div class="faq__inner">
+      <p class="section-eyebrow">Common Questions</p>
+      <h2 class="section-title">Pre-Approval &amp; Financing &mdash; Common Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What's the difference between pre-qualification and pre-approval?
+          <span class="arrow" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="faq-answer">
+          Pre-qualification is a quick, informal estimate of how much you might be able to borrow based on self-reported income and assets &mdash; no credit check required. Pre-approval is a formal process where a lender verifies your income, assets, and credit. Sellers in the South Bay market take pre-approval letters seriously; many will not accept an offer without one.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How much do I need for a down payment?
+          <span class="arrow" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="faq-answer">
+          Conventional loans typically require 5&ndash;20% down. A 20% down payment avoids private mortgage insurance (PMI), which adds cost to your monthly payment. On a $1.2M home, 20% is $240,000. Some loan programs allow 3&ndash;5% down for first-time buyers, though you'll pay PMI until you reach 20% equity.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What are closing costs and how much should I expect?
+          <span class="arrow" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="faq-answer">
+          Closing costs typically run 2&ndash;3% of the loan amount and cover fees for escrow, title insurance, lender origination, appraisal, and recording. On a $1.2M purchase with 20% down, expect roughly $20,000&ndash;$30,000 in closing costs on top of your down payment.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How competitive is the South Bay market right now?
+          <span class="arrow" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="faq-answer">
+          The South Bay remains a competitive seller's market in most price ranges and neighborhoods. Well-priced homes in top school districts regularly receive multiple offers. Working with agents who know the market &mdash; and having your financing fully in order before you start touring &mdash; is the single most important step you can take.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What does a buyer's agent do for me &mdash; and what does it cost?
+          <span class="arrow" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="faq-answer">
+          Your buyer's agent represents your interests exclusively: finding homes that match your criteria, advising on offer strategy, negotiating on your behalf, and guiding you through inspections and closing. Under current California rules, buyers must sign a Buyer Representation Agreement (BRA) before touring homes. Compensation is negotiated as part of the transaction &mdash; we'll walk you through how this works when we connect.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 7: BUYER TIPS BLOG FEED ── -->
+  <section class="buyer-tips" id="buyer-tips">
+    <div class="buyer-tips__inner">
+      <p class="section-eyebrow">From the Blog</p>
+      <h2 class="section-title">Buyer Tips &amp; Guides</h2>
+      <div class="post-cards" id="buyer-tips-cards"></div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 8: CONTACT ── -->
+  <section class="buyer-contact" id="contact">
+    <div class="buyer-contact__inner">
+      <h2>Ready to Start Your Search?</h2>
+      <p class="subhead">Tell us a bit about what you're looking for &mdash; we'll follow up within 24 hours.</p>
+
+      <div class="contact-form">
+        <div class="form-error" id="form-error" role="alert">
+          Something went wrong &mdash; please try again or email us directly.
+        </div>
+        <form id="buyer-form" action="https://formspree.io/f/FORMSPREE_BUYER_ID" method="POST" novalidate>
+          <div class="form-field">
+            <label for="bf-name">Name</label>
+            <input type="text" id="bf-name" name="name" required>
+          </div>
+          <div class="form-field">
+            <label for="bf-email">Email</label>
+            <input type="email" id="bf-email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="bf-phone">Phone</label>
+            <input type="tel" id="bf-phone" name="phone">
+          </div>
+          <div class="form-field">
+            <label for="bf-budget">Budget Range</label>
+            <select id="bf-budget" name="budget">
+              <option value="">Select a range</option>
+              <option>Under $800K</option>
+              <option>$800K&ndash;$1.2M</option>
+              <option>$1.2M&ndash;$1.8M</option>
+              <option>$1.8M&ndash;$2.5M</option>
+              <option>$2.5M+</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="bf-neighborhoods">Neighborhoods of Interest</label>
+            <input type="text" id="bf-neighborhoods" name="neighborhoods" placeholder="e.g. Almaden Valley, Los Gatos">
+          </div>
+          <div class="form-field">
+            <label for="bf-stage">Where are you in the process?</label>
+            <select id="bf-stage" name="stage">
+              <option value="">Select one</option>
+              <option>Just starting to research</option>
+              <option>Getting pre-approved</option>
+              <option>Actively searching</option>
+              <option>Ready to make an offer</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Tell Us What You're Looking For</button>
+        </form>
+        <div class="form-confirmation" id="form-confirmation">
+          <h3>Message received!</h3>
+          <p>We'll follow up within 24 hours. Talk soon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <p class="legal">CalRE# 01435942 (Jessica Hooley) | CalRE# 02201698 (Megan Fletcher) | Coldwell Banker Realty. All rights reserved. | Equal Housing Opportunity &#8853; | The information contained herein is deemed reliable but is not guaranteed.</p>
+  </footer>
+
+  <script>
+  // Neighborhood selector
+  (function() {
+    const tilesEl   = document.getElementById('nb-tiles');
+    const panel     = document.getElementById('nb-panel');
+    const nameEl    = document.getElementById('nb-name');
+    const descEl    = document.getElementById('nb-desc');
+    const priceEl   = document.getElementById('nb-price');
+    const schoolEl  = document.getElementById('nb-schools');
+    const linkEl    = document.getElementById('nb-link');
+    const linkNameEl = document.getElementById('nb-link-name');
+
+    fetch('/neighborhoods.json')
+      .then(r => r.json())
+      .then(neighborhoods => {
+        neighborhoods.forEach((nb, i) => {
+          const tile = document.createElement('div');
+          tile.className = 'nb-tile';
+          tile.textContent = nb.name;
+          tile.dataset.idx = i;
+          tile.addEventListener('click', () => selectNeighborhood(nb, tile));
+          tilesEl.appendChild(tile);
+        });
+      })
+      .catch(() => {});
+
+    function selectNeighborhood(nb, activeTile) {
+      document.querySelectorAll('.nb-tile').forEach(t => t.classList.remove('active'));
+      activeTile.classList.add('active');
+      nameEl.textContent = nb.name;
+      descEl.textContent = nb.description;
+      priceEl.textContent = nb.medianPrice;
+      schoolEl.textContent = nb.schoolDistrict;
+      linkEl.href = '/neighborhoods/' + nb.slug + '/';
+      linkNameEl.textContent = nb.name;
+      panel.classList.add('visible');
+    }
+  })();
+
+  // Mortgage Calculator
+  (function() {
+    const priceEl  = document.getElementById('calc-price');
+    const downEl   = document.getElementById('calc-down');
+    const rateEl   = document.getElementById('calc-rate');
+    const outputEl = document.getElementById('calc-output');
+    const armNote  = document.getElementById('calc-arm-note');
+    const termTabs = document.querySelectorAll('.term-tab');
+
+    let currentTerm = '30';
+    let rates = { '30': 6.75, '15': 6.10, '5arm': 6.25 };
+
+    fetch('/api/mortgage-rates')
+      .then(r => r.json())
+      .then(data => {
+        if (typeof data.rate30 === 'number') rates['30'] = data.rate30;
+        if (typeof data.rate15 === 'number') rates['15'] = data.rate15;
+        if (typeof data.rate5arm === 'number') rates['5arm'] = data.rate5arm;
+        rateEl.value = rates[currentTerm];
+        calculate();
+      })
+      .catch(() => {});
+
+    function calculate() {
+      const P = parseFloat(priceEl.value) * (1 - parseFloat(downEl.value) / 100);
+      const r = parseFloat(rateEl.value) / 100 / 12;
+      const n = currentTerm === '5arm' ? 360 : parseInt(currentTerm) * 12;
+      if (isNaN(P) || isNaN(r) || P <= 0 || r <= 0) return;
+      const payment = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+      outputEl.textContent = '$' + Math.round(payment).toLocaleString() + ' / mo';
+      armNote.style.display = currentTerm === '5arm' ? 'block' : 'none';
+    }
+
+    termTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        termTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        currentTerm = tab.dataset.term;
+        const r = rates[currentTerm];
+        if (r != null) rateEl.value = r;
+        calculate();
+      });
+    });
+
+    [priceEl, downEl, rateEl].forEach(el => el.addEventListener('input', calculate));
+    calculate();
+  })();
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.nextElementSibling.classList.toggle('open', !expanded);
+    });
+  });
+
+  // Buyer Tips Blog Feed
+  (function() {
+    const container = document.getElementById('buyer-tips-cards');
+    const section   = document.getElementById('buyer-tips');
+    fetch('/posts.json')
+      .then(r => r.json())
+      .then(posts => {
+        const tips = posts.filter(p => p.contentType === 'buyer-tips' && !p.hidden).slice(0, 3);
+        if (tips.length === 0) { section.style.display = 'none'; return; }
+        tips.forEach(post => {
+          const card = document.createElement('div');
+          card.className = 'post-card';
+          card.innerHTML = `
+            ${post.featuredImage ? `<img class="post-card__img" src="${post.featuredImage}" alt="" loading="lazy">` : '<div class="post-card__img"></div>'}
+            <div class="post-card__body">
+              <div class="post-card__tag">Buyer Tips</div>
+              <div class="post-card__title">${post.title}</div>
+              <div class="post-card__excerpt">${post.excerpt || ''}</div>
+              <a class="post-card__link" href="${post.url}">Read More &rarr;</a>
+            </div>`;
+          container.appendChild(card);
+        });
+      })
+      .catch(() => { section.style.display = 'none'; });
+  })();
+
+  // Buyer Contact Form — Formspree AJAX
+  (function() {
+    const form      = document.getElementById('buyer-form');
+    const errorEl   = document.getElementById('form-error');
+    const confirmEl = document.getElementById('form-confirmation');
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      errorEl.style.display = 'none';
+      const data = new FormData(form);
+      try {
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data,
+        });
+        if (resp.ok) {
+          form.style.display = 'none';
+          confirmEl.style.display = 'block';
+        } else {
+          errorEl.style.display = 'block';
+        }
+      } catch {
+        errorEl.style.display = 'block';
+      }
+    });
+  })();
+  </script>
+
+  <script src="/assets/main.js" defer></script>
+</body>
+</html>
