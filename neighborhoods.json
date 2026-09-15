@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "almaden-valley",
+    "name": "Almaden Valley",
+    "description": "Family-friendly hillside community with top-rated schools, scenic trails, and some of San Jose's most desirable homes.",
+    "medianPrice": "~$1.6M",
+    "schoolDistrict": "San Jose Unified (Leland)"
+  },
+  {
+    "slug": "willow-glen",
+    "name": "Willow Glen",
+    "description": "Charming village feel with a walkable downtown, tree-lined streets, and a mix of historic bungalows and new construction.",
+    "medianPrice": "~$1.4M",
+    "schoolDistrict": "San Jose Unified"
+  },
+  {
+    "slug": "blossom-valley",
+    "name": "Blossom Valley",
+    "description": "Established, affordable neighborhoods with great freeway access, strong community character, and good value for the South Bay.",
+    "medianPrice": "~$1.1M",
+    "schoolDistrict": "Evergreen / Almaden Union"
+  },
+  {
+    "slug": "campbell",
+    "name": "Campbell",
+    "description": "Vibrant downtown dining scene, award-winning schools, and a tight-knit community feel just minutes from Los Gatos.",
+    "medianPrice": "~$1.3M",
+    "schoolDistrict": "Campbell Union / Los Gatos Union"
+  },
+  {
+    "slug": "los-gatos",
+    "name": "Los Gatos",
+    "description": "Luxury village lifestyle with exceptional schools, hillside views, and one of the most sought-after zip codes in the Bay Area.",
+    "medianPrice": "~$2.2M",
+    "schoolDistrict": "Los Gatos Union School District"
+  },
+  {
+    "slug": "los-altos",
+    "name": "Los Altos",
+    "description": "Premier location with one of the best school districts in California, quiet streets, and proximity to major tech employers.",
+    "medianPrice": "~$3.1M",
+    "schoolDistrict": "Los Altos School District / MVLA"
+  }
+]
