@@ -1,0 +1,187 @@
+/* market-trends.css — Phase 2: Parcl Labs price trend chart styles
+ * Add @import or <link> for this file in the shared style.css or neighborhood page heads.
+ * All tokens reference the CB brand system defined in style.css :root.
+ */
+
+/* ── Section layout ────────────────────────────────────────────────────────── */
+.market-trends {
+  background: var(--cb-light-bg, #F0F5FB);
+  padding: 3rem 0;
+}
+
+.market-trends__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.market-trends__header {
+  margin-bottom: 1.5rem;
+}
+
+.market-trends__header h2 {
+  font-family: Georgia, serif;
+  font-size: 1.75rem;
+  color: var(--cb-navy, #002B5C);
+  margin: 0 0 0.25rem;
+}
+
+.market-trends__subtitle {
+  font-size: 0.875rem;
+  color: var(--cb-body, #2D4A6A);
+  margin: 0;
+  opacity: 0.75;
+}
+
+/* ── Loading & error states ─────────────────────────────────────────────────── */
+.market-trends__loading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 0;
+  color: var(--cb-body, #2D4A6A);
+  font-size: 0.9rem;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid var(--cb-border, #D8E4F0);
+  border-top-color: var(--cb-blue, #1E5AB8);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.market-trends__error {
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid var(--cb-border, #D8E4F0);
+  border-radius: 8px;
+  color: var(--cb-body, #2D4A6A);
+  font-size: 0.9rem;
+}
+
+.market-trends__error a {
+  color: var(--cb-blue, #1E5AB8);
+}
+
+/* ── Stat tiles ──────────────────────────────────────────────────────────────── */
+.market-trends__stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.trend-stat {
+  background: #fff;
+  border: 1px solid var(--cb-border, #D8E4F0);
+  border-radius: 8px;
+  padding: 0.875rem 1.25rem;
+  min-width: 130px;
+  flex: 1;
+}
+
+.trend-stat__label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cb-body, #2D4A6A);
+  opacity: 0.65;
+  margin-bottom: 0.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.trend-stat__value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cb-navy, #002B5C);
+  font-family: Georgia, serif;
+}
+
+/* ── Chart wrapper ──────────────────────────────────────────────────────────── */
+.market-trends__canvas-wrap {
+  background: #fff;
+  border: 1px solid var(--cb-border, #D8E4F0);
+  border-radius: 8px;
+  padding: 1.25rem 1rem 0.75rem;
+  position: relative;
+}
+
+.market-trends__canvas-wrap canvas {
+  display: block;
+  width: 100% !important;
+  max-height: 280px;
+}
+
+/* ── Source attribution ─────────────────────────────────────────────────────── */
+.market-trends__source {
+  font-size: 0.72rem;
+  color: var(--cb-body, #2D4A6A);
+  opacity: 0.55;
+  margin: 0.75rem 0 0;
+  text-align: right;
+}
+
+.market-trends__source a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .market-trends__stats {
+    gap: 0.75rem;
+  }
+
+  .trend-stat {
+    min-width: unset;
+    flex: 1 1 calc(50% - 0.75rem);
+    padding: 0.75rem 1rem;
+  }
+
+  .trend-stat__value {
+    font-size: 1.1rem;
+  }
+
+  .market-trends__header h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ── Quick Answer box (AEO / AI Overview target, per spec Section 4) ─────────── */
+.quick-answer {
+  background: #fff;
+  border-left: 4px solid var(--cb-gold, #C9A84C);
+  padding: 1.5rem 0;
+}
+
+.quick-answer__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.quick-answer__heading {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cb-gold, #C9A84C);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.quick-answer p {
+  font-size: 1rem;
+  color: var(--cb-body, #2D4A6A);
+  line-height: 1.65;
+  margin: 0;
+}

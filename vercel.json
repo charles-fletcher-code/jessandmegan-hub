@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "functions": {
+    "api/mortgage-rates.js": { "memory": 128, "maxDuration": 10 }
+  },
+  "headers": [
+    {
+      "source": "/neighborhoods.json",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+    }
+  ]
+}

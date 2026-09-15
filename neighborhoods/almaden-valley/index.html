@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living in Almaden Valley: Homes, Schools & Market | Jessica &amp; Megan</title>
+  <meta name="description" content="Almaden Valley real estate guide — median prices, schools, lifestyle, and 12-month price trends. Expert insight from Jessica Hooley and Megan Fletcher, Coldwell Banker Realty.">
+  <meta name="robots" content="noindex"> <!-- Remove before launch -->
+  <link rel="canonical" href="https://jessandmegan.com/neighborhoods/almaden-valley/">
+  <!-- OG / social -->
+  <meta property="og:title" content="Living in Almaden Valley: Homes, Schools &amp; Market | Jessica &amp; Megan">
+  <meta property="og:description" content="Almaden Valley real estate guide — median prices, schools, lifestyle, and 12-month price trends.">
+  <meta property="og:image" content="https://jessandmegan.com/assets/og-default.jpg">
+  <meta property="og:url" content="https://jessandmegan.com/neighborhoods/almaden-valley/">
+
+  <!-- Structured data: FAQPage + Article + BreadcrumbList (per spec Section 4) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://jessandmegan.com/"},
+          {"@type":"ListItem","position":2,"name":"Neighborhoods","item":"https://jessandmegan.com/neighborhoods/"},
+          {"@type":"ListItem","position":3,"name":"Almaden Valley"}
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Living in Almaden Valley: Homes, Schools & Market",
+        "author": {"@type":"Person","name":"Jessica Hooley"},
+        "publisher": {"@type":"Organization","name":"Jessica & Megan, Coldwell Banker Realty"},
+        "url": "https://jessandmegan.com/neighborhoods/almaden-valley/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is it like to live in Almaden Valley?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Almaden Valley is a quiet, family-oriented neighborhood in southwest San Jose known for top-rated schools, hiking trails, and a village-like feel. Homes are mostly single-family and range from mid-$1M to $3M+."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are Almaden Valley home prices?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Median sale prices in Almaden Valley have historically ranged from $1.2M to $2.5M+ depending on size and location. See the live 12-month price trend below."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Chart.js from cdnjs (per project CDN allowlist) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"
+          integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3oD+sCoJrzXJ+yKRWEOMLTiiNfMSLmYXislVwKG5fy+Kl39Vl53EQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION (same as all hub site pages) -->
+  <nav id="nav" aria-label="Main navigation">
+    <!-- Populated by shared nav include / main.js -->
+  </nav>
+
+  <!-- ── BREADCRUMB ── -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/neighborhoods/">Neighborhoods</a></li>
+      <li aria-current="page">Almaden Valley</li>
+    </ol>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="neighborhood-hero" style="background-image:url('https://pub-xxx.r2.dev/neighborhoods/almaden-valley-hero.webp')">
+    <div class="neighborhood-hero__overlay">
+      <p class="eyebrow">South Bay Silicon Valley</p>
+      <h1>Almaden Valley</h1>
+      <p class="subhead">San Jose's most sought-after hillside community</p>
+    </div>
+  </section>
+
+  <!-- ── QUICK ANSWER BOX (AEO / AI Overview target) ── -->
+  <section class="quick-answer" aria-label="Quick summary">
+    <div class="quick-answer__inner">
+      <h2 class="quick-answer__heading">Quick Answer</h2>
+      <p>Almaden Valley is a quiet, upscale neighborhood in southwest San Jose known for top-rated schools (Almaden Elementary, Bret Harte Middle, Leland High), abundant trails, and a village-like feel. Most homes are single-family and range from the mid-$1M to $3M+. It's ideal for families who want Silicon Valley access without urban density.</p>
+    </div>
+  </section>
+
+  <!-- ── MARKET TRENDS CHART (Phase 2 — Parcl Labs) ── -->
+  <section class="market-trends" id="market-trends" aria-labelledby="trends-heading">
+    <div class="market-trends__inner">
+      <div class="market-trends__header">
+        <h2 id="trends-heading">Market Trends</h2>
+        <p class="market-trends__subtitle">Median sale price per square foot · single-family homes · trailing 12 months</p>
+      </div>
+
+      <!-- Loading state -->
+      <div class="market-trends__loading" id="trends-loading" aria-live="polite">
+        <span class="loading-spinner" aria-hidden="true"></span>
+        <span>Loading market data…</span>
+      </div>
+
+      <!-- Error state -->
+      <div class="market-trends__error" id="trends-error" hidden>
+        <p>Market data temporarily unavailable. <a href="/contact/">Contact us</a> for the latest pricing.</p>
+      </div>
+
+      <!-- Chart container -->
+      <div class="market-trends__chart-wrap" id="trends-chart-wrap" hidden>
+        <!-- Summary stats row -->
+        <div class="market-trends__stats" id="trends-stats" aria-label="Market summary">
+          <div class="trend-stat">
+            <span class="trend-stat__label">Current $/sqft</span>
+            <span class="trend-stat__value" id="stat-current">—</span>
+          </div>
+          <div class="trend-stat">
+            <span class="trend-stat__label">12-month change</span>
+            <span class="trend-stat__value" id="stat-change">—</span>
+          </div>
+          <div class="trend-stat">
+            <span class="trend-stat__label">Median sale price</span>
+            <span class="trend-stat__value" id="stat-median">—</span>
+          </div>
+        </div>
+
+        <!-- Chart.js canvas -->
+        <div class="market-trends__canvas-wrap">
+          <canvas id="trends-chart" aria-label="12-month price per sqft trend chart for Almaden Valley" role="img"></canvas>
+        </div>
+
+        <!-- Source attribution (required per Parcl Labs terms) -->
+        <p class="market-trends__source">
+          Source: <a href="https://parcllabs.com" target="_blank" rel="noopener">Parcl Labs</a> public records data ·
+          Single-family homes · Updated monthly
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEIGHBORHOOD CONTENT ── -->
+  <section class="neighborhood-guide">
+    <div class="neighborhood-guide__inner">
+      <!-- ... full neighborhood editorial content goes here ... -->
+      <!-- (populated via /realpost or manually by Charles at launch) -->
+      <h2>Why Buyers Choose Almaden Valley</h2>
+      <p>Placeholder — replace with editorial content drafted via /realpost or manually.</p>
+    </div>
+  </section>
+
+  <!-- ── AGENT CTA ── -->
+  <section class="agent-cta">
+    <div class="agent-cta__inner">
+      <h2>Thinking About Buying or Selling in Almaden Valley?</h2>
+      <p>Jessica and Megan have closed dozens of transactions in this neighborhood. Get a free consultation.</p>
+      <a href="/contact/" class="btn btn-primary">Schedule a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER (shared) -->
+  <footer id="footer">
+    <p class="legal">CalRE# 01435942 (Jessica Hooley) | CalRE# 02201698 (Megan Fletcher) | Coldwell Banker Realty. All rights reserved. | Equal Housing Opportunity &#8853; | The information contained herein is deemed reliable but is not guaranteed.</p>
+  </footer>
+
+  <!-- ── Chart initialization ── -->
+  <script>
+  // Neighborhood slug — must match the key in NEIGHBORHOOD_CONFIG in api/neighborhood-trends.js
+  const NEIGHBORHOOD_SLUG = 'almaden-valley';
+
+  (function initTrendsChart() {
+    const loadingEl = document.getElementById('trends-loading');
+    const errorEl   = document.getElementById('trends-error');
+    const wrapEl    = document.getElementById('trends-chart-wrap');
+    const canvasEl  = document.getElementById('trends-chart');
+
+    // CB brand palette
+    const NAVY  = '#002B5C';
+    const BLUE  = '#1E5AB8';
+    const GOLD  = '#C9A84C';
+    const BLUE_A = 'rgba(30, 90, 184, 0.12)'; // fill under line
+
+    function formatCurrency(n) {
+      if (n == null) return '—';
+      return '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+    }
+
+    function formatPct(n) {
+      if (n == null) return '—';
+      const sign = n >= 0 ? '+' : '';
+      return sign + n.toFixed(1) + '%';
+    }
+
+    function formatMonth(dateStr) {
+      // "2025-01-01" → "Jan '25"
+      const d = new Date(dateStr + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+    }
+
+    async function fetchAndRender() {
+      let payload;
+      try {
+        const resp = await fetch('/api/neighborhood-trends?neighborhood=' + NEIGHBORHOOD_SLUG);
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        payload = await resp.json();
+        if (!payload.data || payload.data.length === 0) throw new Error('No data');
+      } catch (err) {
+        loadingEl.hidden = true;
+        errorEl.hidden = false;
+        console.warn('Trends chart error:', err);
+        return;
+      }
+
+      // Filter to data points that have a price (trailing 12, drop nulls)
+      const points = payload.data.filter(d => d.price_per_sqft != null).slice(-12);
+      if (points.length < 2) {
+        loadingEl.hidden = true;
+        errorEl.hidden = false;
+        return;
+      }
+
+      // ── Stat tiles ──
+      const latest = points[points.length - 1];
+      const yearAgo = points[0];
+      const pctChange = yearAgo.price_per_sqft
+        ? ((latest.price_per_sqft - yearAgo.price_per_sqft) / yearAgo.price_per_sqft) * 100
+        : null;
+
+      document.getElementById('stat-current').textContent = formatCurrency(latest.price_per_sqft) + '/sqft';
+      const changeEl = document.getElementById('stat-change');
+      changeEl.textContent = formatPct(pctChange);
+      if (pctChange != null) {
+        changeEl.style.color = pctChange >= 0 ? '#1B7340' : '#B91C1C';
+      }
+      document.getElementById('stat-median').textContent = formatCurrency(latest.median_price);
+
+      // ── Chart.js line chart ──
+      const labels = points.map(d => formatMonth(d.date));
+      const values = points.map(d => d.price_per_sqft);
+      const p20    = points.map(d => d.price_per_sqft_p20);
+      const p80    = points.map(d => d.price_per_sqft_p80);
+
+      const hasPercentiles = p20.some(v => v != null) && p80.some(v => v != null);
+
+      const datasets = [
+        {
+          label: 'Median $/sqft',
+          data: values,
+          borderColor: BLUE,
+          backgroundColor: BLUE_A,
+          borderWidth: 2.5,
+          pointRadius: 4,
+          pointBackgroundColor: BLUE,
+          pointHoverRadius: 6,
+          fill: true,
+          tension: 0.3,
+        },
+      ];
+
+      // Optional: add a shaded 20th–80th percentile band
+      if (hasPercentiles) {
+        datasets.unshift({
+          label: '20th–80th pctile',
+          data: p80,
+          borderColor: 'transparent',
+          backgroundColor: 'rgba(30, 90, 184, 0.07)',
+          fill: '+1', // fill to next dataset (p20 below)
+          tension: 0.3,
+          pointRadius: 0,
+        });
+        datasets.push({
+          label: '_p20',
+          data: p20,
+          borderColor: 'transparent',
+          backgroundColor: 'rgba(30, 90, 184, 0.07)',
+          fill: false,
+          tension: 0.3,
+          pointRadius: 0,
+        });
+      }
+
+      new Chart(canvasEl, {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          aspectRatio: 2.2,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: NAVY,
+              titleColor: '#fff',
+              bodyColor: '#E8F0FA',
+              padding: 12,
+              callbacks: {
+                label(ctx) {
+                  if (ctx.dataset.label.startsWith('_')) return null;
+                  if (ctx.dataset.label === '20th–80th pctile') return null;
+                  return ' ' + formatCurrency(ctx.parsed.y) + '/sqft';
+                },
+              },
+            },
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: '#4B6179', font: { size: 12, family: 'Arial, Helvetica, sans-serif' } },
+            },
+            y: {
+              position: 'left',
+              grid: { color: 'rgba(0,0,0,0.06)' },
+              ticks: {
+                color: '#4B6179',
+                font: { size: 12, family: 'Arial, Helvetica, sans-serif' },
+                callback: v => '$' + v.toLocaleString(),
+              },
+            },
+          },
+        },
+      });
+
+      // Show chart, hide loading
+      loadingEl.hidden = true;
+      wrapEl.hidden = false;
+    }
+
+    // Wait for Chart.js to load (it's deferred)
+    if (typeof Chart !== 'undefined') {
+      fetchAndRender();
+    } else {
+      document.querySelector('script[src*="chart.umd"]').addEventListener('load', fetchAndRender);
+    }
+  })();
+  </script>
+
+  <script src="/assets/main.js" defer></script>
+</body>
+</html>
