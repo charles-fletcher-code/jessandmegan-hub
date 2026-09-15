@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living in Blossom Valley: Homes, Schools &amp; Market | Jessica &amp; Megan</title>
+  <meta name="description" content="Blossom Valley real estate guide — median prices, schools, lifestyle, and market insight. Expert guidance from Jessica Hooley and Megan Fletcher, Coldwell Banker Realty.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://jessandmegan.com/neighborhoods/blossom-valley/">
+  <meta property="og:title" content="Living in Blossom Valley: Homes, Schools &amp; Market | Jessica &amp; Megan">
+  <meta property="og:description" content="Blossom Valley real estate guide — median prices, schools, lifestyle, and market insight.">
+  <meta property="og:image" content="https://jessandmegan.com/assets/og-default.jpg">
+  <meta property="og:url" content="https://jessandmegan.com/neighborhoods/blossom-valley/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://jessandmegan.com/"},
+          {"@type":"ListItem","position":2,"name":"Neighborhoods","item":"https://jessandmegan.com/neighborhoods/"},
+          {"@type":"ListItem","position":3,"name":"Blossom Valley"}
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Living in Blossom Valley: Homes, Schools & Market",
+        "author": {"@type":"Person","name":"Jessica Hooley"},
+        "publisher": {"@type":"Organization","name":"Jessica & Megan, Coldwell Banker Realty"},
+        "url": "https://jessandmegan.com/neighborhoods/blossom-valley/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is it like to live in Blossom Valley?",
+            "acceptedAnswer": {"@type":"Answer","text":"Blossom Valley is an established, family-friendly area in southeast San Jose known for affordable prices relative to other South Bay neighborhoods, strong community character, and excellent freeway access to 85, 87, and 101."}
+          },
+          {
+            "@type": "Question",
+            "name": "What are Blossom Valley home prices?",
+            "acceptedAnswer": {"@type":"Answer","text":"Median sale prices in Blossom Valley typically range from approximately $900K to $1.3M, making it one of the more accessible entry points in the South Bay for first-time buyers."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"
+          integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3oD+sCoJrzXJ+yKRWEOMLTiiNfMSLmYXislVwKG5fy+Kl39Vl53EQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .btn-outline { display:inline-block; border:2px solid #002B5C; color:#002B5C; padding:0.7rem 1.5rem; border-radius:4px; text-decoration:none; font-size:0.875rem; font-weight:700; }
+    .btn-outline:hover { background:#002B5C; color:#fff; }
+    .agent-cta--seller { background:#002B5C; color:#fff; padding:3rem 1rem; text-align:center; }
+    .agent-cta--buyer { background:#fff; padding:3rem 1rem; text-align:center; border-top:1px solid #D8E4F0; }
+    .agent-cta__inner { max-width: 640px; margin: 0 auto; }
+    .agent-cta--seller .eyebrow { font-size:0.7rem; letter-spacing:2px; color:#C9A84C; text-transform:uppercase; margin-bottom:0.5rem; }
+  </style>
+</head>
+<body>
+
+  <nav id="nav" aria-label="Main navigation"></nav>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/neighborhoods/">Neighborhoods</a></li>
+      <li aria-current="page">Blossom Valley</li>
+    </ol>
+  </nav>
+
+  <section class="neighborhood-hero">
+    <div class="neighborhood-hero__overlay">
+      <p class="eyebrow">South Bay Silicon Valley</p>
+      <h1>Blossom Valley</h1>
+      <p class="subhead">Established South Bay living with great value</p>
+    </div>
+  </section>
+
+  <section class="quick-answer" aria-label="Quick summary">
+    <div class="quick-answer__inner">
+      <h2 class="quick-answer__heading">Quick Answer</h2>
+      <p>Blossom Valley is an established, affordable area in southeast San Jose with strong community character, excellent freeway access, and good value for South Bay buyers. Median prices range from approximately $900K to $1.3M. It's a great choice for first-time buyers looking for space and value.</p>
+    </div>
+  </section>
+
+  <section class="market-trends" id="market-trends" aria-labelledby="trends-heading">
+    <div class="market-trends__inner">
+      <div class="market-trends__header">
+        <h2 id="trends-heading">Market Trends</h2>
+        <p class="market-trends__subtitle">Median sale price per square foot &middot; single-family homes &middot; trailing 12 months</p>
+      </div>
+      <div class="market-trends__loading" id="trends-loading" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span><span>Loading market data&hellip;</span></div>
+      <div class="market-trends__error" id="trends-error" hidden><p>Market data temporarily unavailable. <a href="/contact/">Contact us</a> for the latest pricing.</p></div>
+      <div class="market-trends__chart-wrap" id="trends-chart-wrap" hidden>
+        <div class="market-trends__stats" id="trends-stats" aria-label="Market summary">
+          <div class="trend-stat"><span class="trend-stat__label">Current $/sqft</span><span class="trend-stat__value" id="stat-current">&mdash;</span></div>
+          <div class="trend-stat"><span class="trend-stat__label">12-month change</span><span class="trend-stat__value" id="stat-change">&mdash;</span></div>
+          <div class="trend-stat"><span class="trend-stat__label">Median sale price</span><span class="trend-stat__value" id="stat-median">&mdash;</span></div>
+        </div>
+        <div class="market-trends__canvas-wrap"><canvas id="trends-chart" aria-label="12-month price per sqft trend chart for Blossom Valley" role="img"></canvas></div>
+        <p class="market-trends__source">Source: <a href="https://parcllabs.com" target="_blank" rel="noopener">Parcl Labs</a> public records data &middot; Updated monthly</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="neighborhood-guide">
+    <div class="neighborhood-guide__inner">
+      <h2>Why Buyers Choose Blossom Valley</h2>
+      <p>Placeholder &mdash; replace with editorial content.</p>
+    </div>
+  </section>
+
+  <section class="agent-cta agent-cta--seller">
+    <div class="agent-cta__inner">
+      <p class="eyebrow">For Sellers</p>
+      <h2>Curious What Your Blossom Valley Home Is Worth?</h2>
+      <p>Get a complimentary, no-obligation home valuation from agents who know this neighborhood inside and out.</p>
+      <a href="/contact/" class="btn btn-primary">Get a Free Valuation &rarr;</a>
+    </div>
+  </section>
+
+  <section class="agent-cta agent-cta--buyer">
+    <div class="agent-cta__inner">
+      <p class="eyebrow" style="color: #1E5AB8;">For Buyers</p>
+      <h2 style="color: #002B5C;">Searching for Homes in Blossom Valley?</h2>
+      <p style="color: #2D4A6A;">We know every street, school boundary, and hidden gem in this neighborhood. Let's find the right home together.</p>
+      <a href="/buyers/#contact" class="btn btn-outline">Tell Us What You're Looking For &rarr;</a>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <p class="legal">CalRE# 01435942 (Jessica Hooley) | CalRE# 02201698 (Megan Fletcher) | Coldwell Banker Realty. All rights reserved. | Equal Housing Opportunity &#8853;</p>
+  </footer>
+
+  <script>
+  const NEIGHBORHOOD_SLUG = 'blossom-valley';
+  (function initTrendsChart() {
+    const loadingEl=document.getElementById('trends-loading'),errorEl=document.getElementById('trends-error'),wrapEl=document.getElementById('trends-chart-wrap'),canvasEl=document.getElementById('trends-chart');
+    const NAVY='#002B5C',BLUE='#1E5AB8',BLUE_A='rgba(30,90,184,0.12)';
+    function fmt(n){return n==null?'—':'$'+n.toLocaleString('en-US',{maximumFractionDigits:0});}
+    function fmtPct(n){if(n==null)return'—';return(n>=0?'+':'')+n.toFixed(1)+'%';}
+    function fmtMonth(s){const d=new Date(s+'T00:00:00');return d.toLocaleDateString('en-US',{month:'short',year:'2-digit'});}
+    async function fetchAndRender(){
+      let payload;
+      try{const resp=await fetch('/api/neighborhood-trends?neighborhood='+NEIGHBORHOOD_SLUG);if(!resp.ok)throw new Error('HTTP '+resp.status);payload=await resp.json();if(!payload.data||payload.data.length===0)throw new Error('No data');}catch(err){loadingEl.hidden=true;errorEl.hidden=false;return;}
+      const points=payload.data.filter(d=>d.price_per_sqft!=null).slice(-12);
+      if(points.length<2){loadingEl.hidden=true;errorEl.hidden=false;return;}
+      const latest=points[points.length-1],yearAgo=points[0];
+      const pct=yearAgo.price_per_sqft?((latest.price_per_sqft-yearAgo.price_per_sqft)/yearAgo.price_per_sqft)*100:null;
+      document.getElementById('stat-current').textContent=fmt(latest.price_per_sqft)+'/sqft';
+      const cel=document.getElementById('stat-change');cel.textContent=fmtPct(pct);if(pct!=null)cel.style.color=pct>=0?'#1B7340':'#B91C1C';
+      document.getElementById('stat-median').textContent=fmt(latest.median_price);
+      new Chart(canvasEl,{type:'line',data:{labels:points.map(d=>fmtMonth(d.date)),datasets:[{label:'Median $/sqft',data:points.map(d=>d.price_per_sqft),borderColor:BLUE,backgroundColor:BLUE_A,borderWidth:2.5,pointRadius:4,pointBackgroundColor:BLUE,fill:true,tension:0.3}]},options:{responsive:true,maintainAspectRatio:true,aspectRatio:2.2,plugins:{legend:{display:false},tooltip:{backgroundColor:NAVY,titleColor:'#fff',bodyColor:'#E8F0FA',padding:12}},scales:{x:{grid:{display:false},ticks:{color:'#4B6179'}},y:{grid:{color:'rgba(0,0,0,0.06)'},ticks:{color:'#4B6179',callback:v=>'$'+v.toLocaleString()}}}}});
+      loadingEl.hidden=true;wrapEl.hidden=false;
+    }
+    if(typeof Chart!=='undefined'){fetchAndRender();}else{document.querySelector('script[src*="chart.umd"]').addEventListener('load',fetchAndRender);}
+  })();
+  </script>
+  <script src="/assets/main.js" defer></script>
+</body>
+</html>

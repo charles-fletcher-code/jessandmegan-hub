@@ -64,6 +64,14 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 
   <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .btn-outline { display:inline-block; border:2px solid #002B5C; color:#002B5C; padding:0.7rem 1.5rem; border-radius:4px; text-decoration:none; font-size:0.875rem; font-weight:700; }
+    .btn-outline:hover { background:#002B5C; color:#fff; }
+    .agent-cta--seller { background:#002B5C; color:#fff; padding:3rem 1rem; text-align:center; }
+    .agent-cta--buyer { background:#fff; padding:3rem 1rem; text-align:center; border-top:1px solid #D8E4F0; }
+    .agent-cta__inner { max-width: 640px; margin: 0 auto; }
+    .agent-cta--seller .eyebrow { font-size:0.7rem; letter-spacing:2px; color:#C9A84C; text-transform:uppercase; margin-bottom:0.5rem; }
+  </style>
 </head>
 <body>
 
@@ -159,12 +167,23 @@
     </div>
   </section>
 
-  <!-- ── AGENT CTA ── -->
-  <section class="agent-cta">
+  <!-- ── SELLER CTA ── -->
+  <section class="agent-cta agent-cta--seller">
     <div class="agent-cta__inner">
-      <h2>Thinking About Buying or Selling in Almaden Valley?</h2>
-      <p>Jessica and Megan have closed dozens of transactions in this neighborhood. Get a free consultation.</p>
-      <a href="/contact/" class="btn btn-primary">Schedule a Free Consultation</a>
+      <p class="eyebrow">For Sellers</p>
+      <h2>Curious What Your Almaden Valley Home Is Worth?</h2>
+      <p>Get a complimentary, no-obligation home valuation from agents who know this neighborhood inside and out.</p>
+      <a href="/contact/" class="btn btn-primary">Get a Free Valuation &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ── BUYER CTA ── -->
+  <section class="agent-cta agent-cta--buyer">
+    <div class="agent-cta__inner">
+      <p class="eyebrow" style="color: var(--cb-blue, #1E5AB8);">For Buyers</p>
+      <h2 style="color: var(--cb-navy, #002B5C);">Searching for Homes in Almaden Valley?</h2>
+      <p style="color: var(--cb-body, #2D4A6A);">We know every street, school boundary, and hidden gem in this neighborhood. Let's find the right home together.</p>
+      <a href="/buyers/#contact" class="btn btn-outline">Tell Us What You're Looking For &rarr;</a>
     </div>
   </section>
 
