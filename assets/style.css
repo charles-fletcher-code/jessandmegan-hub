@@ -1,0 +1,216 @@
+/* ============================================================
+   Jess & Megan Hub — shared stylesheet
+   Design tokens, nav/footer, buttons, hero variants, cards,
+   market-trends/quick-answer, contact form.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&family=Jost:wght@400;500;600&display=swap');
+
+:root {
+  --cb-navy: #002B5C;
+  --cb-blue: #1E5AB8;
+  --cb-gold: #C9A84C;
+  --cb-light-bg: #F0F5FB;
+  --cb-border: #D8E4F0;
+  --cb-body: #2D4A6A;
+  --font-heading: 'Cormorant', Georgia, serif;
+  --font-body: 'Jost', Arial, Helvetica, sans-serif;
+  --hero-photo: url('https://pub-c93973381119433ead963cf31b0fbf00.r2.dev/thrasher_photos/001_001_ejp_29062026_6144px_415.jpg');
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font-body); color: var(--cb-body); background: #fff; }
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 300; }
+a { font-family: var(--font-body); }
+
+/* ── Nav ─────────────────────────────────────────────────── */
+#nav { background: var(--cb-navy); }
+.nav-inner { max-width: 960px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; gap: 1.5rem; height: 56px; }
+.nav-logo { color: #fff; font-family: var(--font-heading); font-weight: 500; font-size: 1.3rem; text-decoration: none; margin-right: auto; }
+.nav-links { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.25rem; }
+.nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; font-size: 0.85rem; }
+.nav-links a:hover, .nav-links a[aria-current] { color: #fff; }
+.nav-cta { background: var(--cb-gold); color: var(--cb-navy); font-weight: 500; padding: 0.5rem 1.1rem; border-radius: 999px; text-decoration: none; font-size: 0.8rem; white-space: nowrap; }
+.nav-cta:hover { filter: brightness(1.08); }
+@media (max-width: 640px) { .nav-links { display: none; } }
+
+/* ── Breadcrumb ──────────────────────────────────────────── */
+.breadcrumb { max-width: 960px; margin: 0 auto; padding: 0.85rem 1rem; }
+.breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; font-size: 0.75rem; color: var(--cb-body); }
+.breadcrumb li { display: inline-flex; }
+.breadcrumb li:not(:last-child)::after { content: '/'; margin-left: 0.4rem; color: var(--cb-border); }
+.breadcrumb a { color: var(--cb-blue); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb li[aria-current] { color: var(--cb-navy); font-weight: 500; }
+
+/* ── Buttons (pill) ──────────────────────────────────────── */
+.btn-gold, .btn-navy, .btn-ghost, .btn-outline, .btn-outline-white, .btn-explore, .btn-submit, .btn-primary, .btn {
+  display: inline-block; font-family: var(--font-body); font-weight: 500; padding: 0.75rem 1.6rem;
+  border-radius: 999px; text-decoration: none; font-size: 0.85rem; border: none; cursor: pointer; text-align: center;
+}
+.btn-gold, .btn-primary { background: var(--cb-gold); color: var(--cb-navy); }
+.btn-gold:hover, .btn-primary:hover { filter: brightness(1.08); }
+.btn-navy { background: var(--cb-navy); color: #fff; }
+.btn-navy:hover { filter: brightness(1.15); }
+.btn-ghost { border: 1.5px solid rgba(255,255,255,0.5); color: #fff; background: transparent; }
+.btn-ghost:hover { border-color: #fff; }
+.btn-outline { border: 1.5px solid var(--cb-navy); color: var(--cb-navy); background: transparent; }
+.btn-outline:hover { background: var(--cb-navy); color: #fff; }
+.btn-outline-white { border: 1.5px solid rgba(255,255,255,0.6); color: #fff; background: transparent; }
+.btn-outline-white:hover { background: rgba(255,255,255,0.12); }
+.btn-explore { background: var(--cb-navy); color: #fff; padding: 0.6rem 1.2rem; font-size: 0.8rem; }
+.btn-explore:hover { filter: brightness(1.2); }
+.btn-submit { width: 100%; background: var(--cb-gold); color: var(--cb-navy); font-weight: 600; padding: 0.85rem; }
+.btn-submit:hover { filter: brightness(1.08); }
+
+/* ── Section helpers ─────────────────────────────────────── */
+.section-eyebrow { font-size: 0.7rem; letter-spacing: 2px; color: var(--cb-gold); text-transform: uppercase; margin: 0 0 0.4rem; font-weight: 500; }
+.section-title { font-family: var(--font-heading); font-weight: 300; font-size: 1.9rem; color: var(--cb-navy); margin: 0 0 1.5rem; }
+
+/* ── Homepage hero: full-bleed photo + gradient + agent card ── */
+.hero {
+  position: relative; min-height: 480px; display: flex; align-items: flex-end;
+  background: var(--hero-photo) center/cover no-repeat, var(--cb-navy);
+  color: #fff; padding: 3rem 1rem 3.5rem;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,43,92,0.35) 0%, rgba(0,43,92,0.88) 100%);
+}
+.hero__content { position: relative; max-width: 600px; margin: 0 auto; text-align: center; width: 100%; }
+.hero__eyebrow { font-size: 0.7rem; letter-spacing: 2px; color: var(--cb-gold); text-transform: uppercase; margin: 0 0 0.75rem; font-weight: 500; }
+.hero h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); margin: 0 0 1rem; line-height: 1.15; color: #fff; }
+.hero__sub { font-size: 1.05rem; opacity: 0.92; max-width: 540px; margin: 0 auto 2rem; line-height: 1.6; }
+.hero__ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero__agent-card {
+  position: relative; margin: 2.5rem auto 0; max-width: 320px; background: #fff; border-radius: 10px;
+  padding: 0.75rem 1.1rem; display: flex; align-items: center; gap: 0.75rem; box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.hero__agent-card img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--cb-border); }
+.hero__agent-card img + img { margin-left: -14px; }
+.hero__agent-card .names { font-size: 0.78rem; color: var(--cb-navy); font-weight: 500; text-align: left; line-height: 1.35; }
+
+/* ── Neighborhood-detail hero: full-bleed photo + centered text ── */
+.neighborhood-hero {
+  position: relative; min-height: 280px; display: flex; align-items: center; justify-content: center;
+  background: var(--hero-photo) center/cover no-repeat, var(--cb-navy);
+}
+.neighborhood-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,43,92,0.55) 0%, rgba(0,43,92,0.8) 100%); }
+.neighborhood-hero__overlay { position: relative; text-align: center; padding: 2rem 1rem; color: #fff; max-width: 640px; margin: 0 auto; }
+.neighborhood-hero__overlay .eyebrow { font-size: 0.7rem; letter-spacing: 2px; color: var(--cb-gold); text-transform: uppercase; margin: 0 0 0.5rem; font-weight: 500; }
+.neighborhood-hero__overlay h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 0.5rem; color: #fff; }
+.neighborhood-hero__overlay .subhead { font-size: 1rem; opacity: 0.92; margin: 0; }
+
+/* ── Agent cards (Meet Jessica & Megan) ──────────────────── */
+.agents { background: var(--cb-light-bg); padding: 3.5rem 1rem; }
+.agents__inner { max-width: 760px; margin: 0 auto; }
+.agent-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 480px) { .agent-cards { grid-template-columns: 1fr; } }
+.agent-card { background: #fff; border: 1px solid var(--cb-border); border-radius: 8px; padding: 1.5rem; }
+.agent-card__name { font-weight: 500; font-size: 1.3rem; color: var(--cb-navy); margin: 0 0 0.2rem; }
+.agent-card__title { font-size: 0.75rem; color: var(--cb-gold); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 0.75rem; }
+.agent-card__bio { font-size: 0.875rem; line-height: 1.6; margin: 0 0 0.5rem; }
+.agent-card__lic { font-size: 0.72rem; opacity: 0.6; }
+
+/* ── Service tiles ───────────────────────────────────────── */
+.services { background: #fff; padding: 3.5rem 1rem; }
+.services__inner { max-width: 760px; margin: 0 auto; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 1.5rem; }
+@media (max-width: 560px) { .service-grid { grid-template-columns: 1fr; } }
+.service-tile { border: 1px solid var(--cb-border); border-radius: 8px; padding: 1.25rem; text-decoration: none; display: block; transition: box-shadow 0.15s; }
+.service-tile:hover { box-shadow: 0 4px 16px rgba(0,43,92,0.1); }
+.service-tile__label { font-size: 0.65rem; letter-spacing: 1.5px; color: var(--cb-blue); text-transform: uppercase; margin: 0 0 0.4rem; }
+.service-tile__title { font-weight: 500; font-size: 1.15rem; color: var(--cb-navy); margin: 0 0 0.4rem; }
+.service-tile__desc { font-size: 0.8rem; margin: 0; line-height: 1.5; }
+
+/* ── Neighborhood photo cards (homepage strip) ───────────── */
+.neighborhoods { background: var(--cb-navy); padding: 3.5rem 1rem; color: #fff; }
+.neighborhoods__inner { max-width: 900px; margin: 0 auto; }
+.neighborhoods .section-title { color: #fff; margin-bottom: 1.25rem; }
+.nb-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 1.5rem; }
+@media (max-width: 640px) { .nb-cards { grid-template-columns: repeat(2, 1fr); } }
+.nb-card { position: relative; border-radius: 10px; overflow: hidden; height: 110px; text-decoration: none; display: block; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+.nb-card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.65); transition: filter 0.15s, transform 0.15s; }
+.nb-card:hover img { filter: brightness(0.5); transform: scale(1.03); }
+.nb-card span { position: absolute; bottom: 8px; left: 10px; right: 10px; color: #fff; font-size: 0.8rem; font-weight: 500; }
+
+/* ── /neighborhoods/ index page card variant ─────────────── */
+.nb-index-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+@media (max-width: 640px) { .nb-index-grid { grid-template-columns: 1fr; } }
+.nb-index-card { border: 1px solid var(--cb-border); border-radius: 10px; overflow: hidden; text-decoration: none; display: block; background: #fff; transition: box-shadow 0.15s; }
+.nb-index-card:hover { box-shadow: 0 8px 24px rgba(0,43,92,0.12); }
+.nb-index-card__img { height: 160px; overflow: hidden; }
+.nb-index-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.nb-index-card__body { padding: 1.1rem 1.25rem 1.35rem; }
+.nb-index-card__name { font-weight: 500; font-size: 1.3rem; color: var(--cb-navy); margin: 0 0 0.4rem; }
+.nb-index-card__desc { font-size: 0.85rem; line-height: 1.55; margin: 0 0 0.6rem; }
+.nb-index-card__meta { font-size: 0.75rem; color: var(--cb-gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ── Contact CTA band ─────────────────────────────────────── */
+.contact-cta { background: var(--cb-gold); padding: 3.5rem 1rem; text-align: center; }
+.contact-cta h2 { font-size: 2rem; color: var(--cb-navy); margin: 0 0 0.5rem; }
+.contact-cta p { color: var(--cb-navy); opacity: 0.85; margin: 0 0 1.75rem; }
+
+/* ── Footer ──────────────────────────────────────────────── */
+footer { background: var(--cb-navy); color: rgba(255,255,255,0.5); padding: 1.5rem 1rem; text-align: center; font-size: 0.72rem; line-height: 1.6; }
+footer a { color: rgba(255,255,255,0.7); }
+
+/* ── Quick Answer box ────────────────────────────────────── */
+.quick-answer { background: #fff; border-left: 4px solid var(--cb-gold); padding: 1.5rem 0; }
+.quick-answer__inner { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+.quick-answer__heading { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cb-gold); font-weight: 600; margin: 0 0 0.5rem; }
+.quick-answer p { font-size: 1rem; line-height: 1.65; margin: 0; }
+
+/* ── Market trends chart section ─────────────────────────── */
+.market-trends { background: var(--cb-light-bg); padding: 3rem 0; }
+.market-trends__inner { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+.market-trends__header { margin-bottom: 1.5rem; }
+.market-trends__header h2 { font-size: 1.9rem; color: var(--cb-navy); margin: 0 0 0.25rem; }
+.market-trends__subtitle { font-size: 0.875rem; margin: 0; opacity: 0.75; }
+.market-trends__loading { display: flex; align-items: center; gap: 0.75rem; padding: 2rem 0; font-size: 0.9rem; }
+.loading-spinner { display: inline-block; width: 20px; height: 20px; border: 2.5px solid var(--cb-border); border-top-color: var(--cb-blue); border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.market-trends__error { padding: 1.5rem; background: #fff; border: 1px solid var(--cb-border); border-radius: 8px; font-size: 0.9rem; }
+.market-trends__error a { color: var(--cb-blue); }
+.market-trends__stats { display: flex; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.trend-stat { background: #fff; border: 1px solid var(--cb-border); border-radius: 8px; padding: 0.875rem 1.25rem; min-width: 130px; flex: 1; }
+.trend-stat__label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.65; margin-bottom: 0.25rem; }
+.trend-stat__value { display: block; font-size: 1.25rem; font-weight: 600; color: var(--cb-navy); font-family: var(--font-heading); }
+.market-trends__canvas-wrap { background: #fff; border: 1px solid var(--cb-border); border-radius: 8px; padding: 1.25rem 1rem 0.75rem; position: relative; }
+.market-trends__canvas-wrap canvas { display: block; width: 100% !important; max-height: 280px; }
+.market-trends__source { font-size: 0.72rem; opacity: 0.55; margin: 0.75rem 0 0; text-align: right; }
+.market-trends__source a { color: inherit; text-decoration: underline; }
+@media (max-width: 600px) {
+  .market-trends__stats { gap: 0.75rem; }
+  .trend-stat { min-width: unset; flex: 1 1 calc(50% - 0.75rem); padding: 0.75rem 1rem; }
+  .trend-stat__value { font-size: 1.1rem; }
+  .market-trends__header h2 { font-size: 1.5rem; }
+}
+
+/* ── Neighborhood editorial + seller/buyer CTA ───────────── */
+.neighborhood-guide { background: #fff; padding: 3rem 0; }
+.neighborhood-guide__inner { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+.neighborhood-guide h2 { font-size: 1.75rem; color: var(--cb-navy); margin: 0 0 0.75rem; }
+.neighborhood-guide p { font-size: 0.95rem; line-height: 1.7; margin: 0; }
+
+.agent-cta { padding: 3rem 1rem; text-align: center; }
+.agent-cta__inner { max-width: 640px; margin: 0 auto; }
+.agent-cta--seller { background: var(--cb-navy); color: #fff; }
+.agent-cta--seller .eyebrow { font-size: 0.7rem; letter-spacing: 2px; color: var(--cb-gold); text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 500; }
+.agent-cta--seller h2 { color: #fff; font-size: 1.65rem; margin: 0 0 0.5rem; }
+.agent-cta--seller p { opacity: 0.85; margin: 0 0 1.5rem; }
+.agent-cta--buyer { background: #fff; border-top: 1px solid var(--cb-border); }
+.agent-cta--buyer .eyebrow { font-size: 0.7rem; letter-spacing: 2px; color: var(--cb-blue); text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 500; }
+.agent-cta--buyer h2 { color: var(--cb-navy); font-size: 1.65rem; margin: 0 0 0.5rem; }
+.agent-cta--buyer p { margin: 0 0 1.5rem; }
+
+/* ── Contact form component (shared: /buyers/ + /contact/) ── */
+.contact-form { background: #fff; border-radius: 8px; padding: 1.75rem; }
+.form-field { margin-bottom: 1rem; }
+.form-field label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--cb-navy); margin-bottom: 4px; }
+.form-field input, .form-field select, .form-field textarea { width: 100%; border: 1px solid var(--cb-border); border-radius: 6px; padding: 0.55rem 0.7rem; font-size: 0.9rem; color: var(--cb-navy); box-sizing: border-box; font-family: var(--font-body); }
+.form-field textarea { resize: vertical; min-height: 100px; }
+.form-error { display: none; color: #B91C1C; font-size: 0.8rem; margin-bottom: 0.75rem; }
+.form-confirmation { display: none; text-align: center; padding: 2rem 0; }
+.form-confirmation h3 { color: var(--cb-navy); margin-bottom: 0.5rem; }
+.form-confirmation p { font-size: 0.875rem; }
