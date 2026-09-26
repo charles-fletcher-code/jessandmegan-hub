@@ -214,3 +214,8 @@ footer a { color: rgba(255,255,255,0.7); }
 .form-confirmation { display: none; text-align: center; padding: 2rem 0; }
 .form-confirmation h3 { color: var(--cb-navy); margin-bottom: 0.5rem; }
 .form-confirmation p { font-size: 0.875rem; }
+
+/* ── Listing status badge (/listings/) ───────────────────── */
+.listing-badge { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 999px; margin-bottom: 0.5rem; }
+.listing-badge--active { background: var(--cb-gold); color: var(--cb-navy); }
+.listing-badge--sold { background: var(--cb-navy); color: #fff; }
