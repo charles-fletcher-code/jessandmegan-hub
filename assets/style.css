@@ -19,6 +19,9 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+/* Defensive: guarantees the native `hidden` attribute always wins, even when a
+   class rule elsewhere (e.g. .market-trends__loading) sets its own `display`. */
+[hidden] { display: none !important; }
 body { margin: 0; font-family: var(--font-body); color: var(--cb-body); background: #fff; }
 h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 300; }
 a { font-family: var(--font-body); }
