@@ -89,6 +89,10 @@ async function searchMarkets(query, state, locationType = 'ALL') {
   const resp = await fetch(url.toString(), {
     headers: { Accept: 'application/json', Authorization: API_KEY },
   });
+  if (resp.status === 404) {
+    // No markets matched this query — not an error, just try the next query/neighborhood.
+    return [];
+  }
   if (!resp.ok) {
     throw new Error(`Search failed: ${resp.status} ${await resp.text()}`);
   }

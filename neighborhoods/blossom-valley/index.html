@@ -87,7 +87,7 @@
     <div class="market-trends__inner">
       <div class="market-trends__header">
         <h2 id="trends-heading">Market Trends</h2>
-        <p class="market-trends__subtitle">Median sale price per square foot &middot; single-family homes &middot; trailing 12 months</p>
+        <p class="market-trends__subtitle" id="trends-subtitle">Median sale price per square foot &middot; single-family homes &middot; trailing 12 months</p>
       </div>
       <div class="market-trends__loading" id="trends-loading" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span><span>Loading market data&hellip;</span></div>
       <div class="market-trends__error" id="trends-error" hidden><p>Market data temporarily unavailable. <a href="/contact/">Contact us</a> for the latest pricing.</p></div>
@@ -145,6 +145,7 @@
       try{const resp=await fetch('/api/neighborhood-trends?neighborhood='+NEIGHBORHOOD_SLUG);if(!resp.ok)throw new Error('HTTP '+resp.status);payload=await resp.json();if(!payload.data||payload.data.length===0)throw new Error('No data');}catch(err){loadingEl.hidden=true;errorEl.hidden=false;return;}
       const points=payload.data.filter(d=>d.price_per_sqft!=null).slice(-12);
       if(points.length<2){loadingEl.hidden=true;errorEl.hidden=false;return;}
+      if(payload.fallback_label){const subtitleEl=document.getElementById('trends-subtitle');subtitleEl.textContent+=' — shown at the '+payload.fallback_label+' city level ('+payload.label+'-specific data not tracked separately)';}
       const latest=points[points.length-1],yearAgo=points[0];
       const pct=yearAgo.price_per_sqft?((latest.price_per_sqft-yearAgo.price_per_sqft)/yearAgo.price_per_sqft)*100:null;
       document.getElementById('stat-current').textContent=fmt(latest.price_per_sqft)+'/sqft';

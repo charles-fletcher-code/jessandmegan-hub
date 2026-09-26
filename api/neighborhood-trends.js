@@ -23,33 +23,37 @@
 // "fallback_label" appears in the chart subtitle when the parcl_id is city-level
 // (i.e., Almaden Valley uses San Jose data because no CDP-level pricefeed exists).
 const NEIGHBORHOOD_CONFIG = {
+  // Almaden Valley, Willow Glen, and Blossom Valley are San Jose census-designated
+  // places with no market of their own in Parcl's coverage (confirmed via
+  // scripts/lookup-parcl-ids.js — search returns zero results for all three).
+  // They fall back to San Jose city-level data; fallback_label surfaces that in the UI.
   'almaden-valley': {
-    parcl_id: null,         // Run lookup-parcl-ids.js to get this
+    parcl_id: 5373901,          // San Jose City (fallback — no CDP-level market in Parcl)
     label: 'Almaden Valley',
-    fallback_label: null,   // e.g. 'San Jose' if falling back to city level
+    fallback_label: 'San Jose',
   },
   'willow-glen': {
-    parcl_id: null,
+    parcl_id: 5373901,          // San Jose City (fallback)
     label: 'Willow Glen',
-    fallback_label: null,
+    fallback_label: 'San Jose',
   },
   'blossom-valley': {
-    parcl_id: null,
+    parcl_id: 5373901,          // San Jose City (fallback)
     label: 'Blossom Valley',
-    fallback_label: null,
+    fallback_label: 'San Jose',
   },
   'campbell': {
-    parcl_id: null,
+    parcl_id: 5373896,          // Campbell City
     label: 'Campbell',
     fallback_label: null,
   },
   'los-gatos': {
-    parcl_id: null,
+    parcl_id: 5373880,          // Los Gatos Town
     label: 'Los Gatos',
     fallback_label: null,
   },
   'los-altos': {
-    parcl_id: null,
+    parcl_id: 5373959,          // Los Altos City
     label: 'Los Altos',
     fallback_label: null,
   },
@@ -150,13 +154,16 @@ async function fetchTrends(parclId, apiKey) {
   // items are newest-first; reverse so chart shows oldest→newest left→right
   const items = (json.items || []).reverse();
 
+  // Each stat (median, percentile_20th, percentile_80th) is itself an object keyed
+  // by event type ({ sales, new_listings_for_sale, new_rental_listings }) — the
+  // chart cares about closed sales, so we drill into `.sales` explicitly.
   return items.map((item) => ({
-    date: item.date,                                           // "YYYY-MM-01"
-    price_per_sqft: item.price_per_square_foot?.median ?? null, // USD/sqft
-    median_price: item.price?.median ?? null,                  // USD absolute
+    date: item.date,                                                     // "YYYY-MM-01"
+    price_per_sqft: item.price_per_square_foot?.median?.sales ?? null,   // USD/sqft
+    median_price: item.price?.median?.sales ?? null,                    // USD absolute
     // Optionally expose percentile band for a confidence ribbon
-    price_per_sqft_p20: item.price_per_square_foot?.percentile_20th ?? null,
-    price_per_sqft_p80: item.price_per_square_foot?.percentile_80th ?? null,
+    price_per_sqft_p20: item.price_per_square_foot?.percentile_20th?.sales ?? null,
+    price_per_sqft_p80: item.price_per_square_foot?.percentile_80th?.sales ?? null,
   }));
 }
 

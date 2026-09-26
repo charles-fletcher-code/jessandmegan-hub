@@ -103,7 +103,7 @@
     <div class="market-trends__inner">
       <div class="market-trends__header">
         <h2 id="trends-heading">Market Trends</h2>
-        <p class="market-trends__subtitle">Median sale price per square foot · single-family homes · trailing 12 months</p>
+        <p class="market-trends__subtitle" id="trends-subtitle">Median sale price per square foot · single-family homes · trailing 12 months</p>
       </div>
 
       <!-- Loading state -->
@@ -238,6 +238,11 @@
         loadingEl.hidden = true;
         errorEl.hidden = false;
         return;
+      }
+
+      if (payload.fallback_label) {
+        const subtitleEl = document.getElementById('trends-subtitle');
+        subtitleEl.textContent += ` — shown at the ${payload.fallback_label} city level (${payload.label}-specific data not tracked separately)`;
       }
 
       // ── Stat tiles ──
